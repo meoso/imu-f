@@ -11,7 +11,8 @@ float      r_filter_weight = 1.0f;
 void init_kalman(kalman_t *filter, float q)
 {
     memset(filter, 0, sizeof(kalman_t));
-    filter->q = q * 0.0001f;     //add multiplier to make tuning easier
+    // 0.001f;
+    filter->q = q * 0.01f;     //add multiplier to make tuning easier
     filter->r = 88.0f;           //seeding R at 88.0f
     filter->p = 30.0f;           //seeding P at 30.0f
     filter->e = 1.0f;
